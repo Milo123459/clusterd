@@ -19,10 +19,10 @@ impl Worker {
         
     }
 
-    pub async fn start(self) {
+    pub fn start(self) {
         dbg!("ya");
         tokio::task::Builder::new().name(self.id.as_str()).spawn(async move {
-            tracing::info!("hello from worker")
-        }).unwrap().await.unwrap();
+            crate::spawn::invoke()
+        }).unwrap();
     }
 }

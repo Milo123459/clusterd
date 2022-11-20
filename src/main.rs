@@ -22,5 +22,5 @@ async fn main() {
     };
 
     let worker = Worker::new(cluster, vec!["yeas".to_string()]).unwrap();
-    worker.start().await;
+    worker.start();
 }
